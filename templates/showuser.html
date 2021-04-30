@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+.followers {
+  border: 5px outset red;
+  background-color: lightblue;
+  text-align: center;
+    width:900px;
+    margin-left:auto;
+    margin-right:auto;
+
+      height:auto;
+}
+
+.profile {
+  border: 5px outset red;
+  background-color: lightblue;
+  text-align: center;
+  height:200px;
+  width:400px;
+    height:auto;
+}
+
+
+</style>
+</head>
+<body>
+
+  <div class="topnav">
+    <a class="active" href="userpostuserhome">Home</a>
+
+    <a href="search" >Search</a>
+
+  <div style="float:right;">  <a href="/" >Logout</a></div>
+
+  </div>
+
+
+  <br><br>
+<div class="followers" >
+<h1><u>Users List</u></h1>
+
+{% ifequal status 'Add Connection' %}
+<div align="center" style="height:50px;width:430px;background-color:white;margin-left:auto;margin-right:auto;"> {{ obj }} ::<a href="follow?id={{ obj }}">
+   Add Connection</a>
+  {% else %}
+
+  <div align="center" style="height:50px;width:430px;background-color:white;margin-left:auto;margin-right:auto;"> {{ obj }} ::
+     Following
+{% endifequal %}
+
+
+
+    </div>
+</div>
+
+
+</body>
+</html>

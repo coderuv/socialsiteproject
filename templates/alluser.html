@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+.followers {
+  border: 5px outset red;
+  background-color: lightblue;
+  text-align: center;
+    width:900px;
+    margin-left:auto;
+    margin-right:auto;
+
+      height:auto;
+}
+
+.profile {
+  border: 5px outset red;
+  background-color: lightblue;
+  text-align: center;
+  height:200px;
+  width:400px;
+    height:auto;
+}
+
+
+</style>
+</head>
+<body>
+
+  <div class="topnav">
+    <a class="active" href="userpostuserhome">Home</a>
+
+    <a href="search" >Search</a>
+
+  <div style="float:right;">  <a href="/" >Logout</a></div>
+
+  </div>
+
+
+  <br><br>
+<div class="followers" >
+<h1><u>Users List With Details</u></h1>
+
+
+    <br>
+    {% for users in db1 %}
+
+    <div align="center" style="height:50px;width:430px;background-color:;margin-left:auto;margin-right:auto;">
+
+  <img src="static/profile2.png" height="50px" width="30px" alt="profile image" ></img>
+  Name::{{ users.name}}
+,
+  Mobile::{{ users.mobile}}
+,
+  Email ::{{users.email}}
+
+
+
+   </div>
+<br><br>
+
+{% endfor %}
+<br><br>
+
+
+   </div>
+
+
+
+
+  <br><br>
+</div>
+
+
+</body>
+</html>

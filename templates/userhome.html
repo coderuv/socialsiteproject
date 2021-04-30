@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+.followers {
+  border: 5px outset red;
+  background-color: lightblue;
+  text-align: center;
+    width:350px;
+    margin-left:auto;
+    margin-right:auto;
+    float:left;
+      height:auto;
+}
+
+.following {
+  border: 5px outset red;
+  background-color: lightblue;
+  text-align: center;
+    width:350px;
+    margin-left:auto;
+    margin-right:auto;
+    float:right;
+    height:auto;
+}
+
+.feed {
+  border: 5px outset red;
+  background-color: lightblue;
+  text-align: center;
+    width:465px;
+    margin-left:auto;
+    margin-right:auto;
+    float:left;
+      height:auto;
+
+  }
+
+.profile {
+  border: 5px outset red;
+  background-color: lightblue;
+  text-align: center;
+  height:200px;
+  width:400px;
+    height:auto;
+}
+
+
+</style>
+</head>
+<body>
+
+  <div class="topnav">
+    <a class="active" href="userpostuserhome">Home</a>
+
+    <a href="search" >Search</a>
+
+  <div style="float:right;">  <a href="/" >Logout</a></div>
+
+  </div>
+
+
+  <div class="profile">
+    <img src="static/profile2.png" height="70px" width="70px" alt="profile image" ></img>
+    <br>
+
+  Username: {{ username }}<br>
+  Connections: {{ followedpeople }}<br>
+  <a href="search"><button> Search User</button></a>
+  <br>
+<br>
+  <a href="createpost"><button> Create Post</button></a>
+  <br><br>
+  </div>
+
+  <br><br>
+<div class="followers">
+<h1> All Mutual Connections </h1>
+
+{% for users in conUser %}
+
+
+{% ifequal username users.userId  %}
+
+
+<img src="static/profile.jpg" height="30px" width="30px" alt="profile image" ></img>
+
+User Name::{{ users.userConnectionId}}
+  {% else %}
+
+{% endifequal %}
+
+
+
+
+<br><br>
+
+{% endfor %}
+
+</div>
+
+
+<div class="feed">
+<h1> <u>Feed</u></h1>
+<div align="center" style="height:50px;width:430px;background-color:blue;margin-left:auto;margin-right:auto;"> feed </div>
+<br>
+<div align="center" style="height:50px;width:430px;background-color:blue;margin-left:auto;margin-right:auto;"> feed </div>
+<br>
+<div align="center" style="height:50px;width:430px;background-color:blue;margin-left:auto;margin-right:auto;"> feed </div>
+<br>
+<div align="center" style="height:50px;width:430px;background-color:blue;margin-left:auto;margin-right:auto;"> feed </div>
+<br>
+<div align="center" style="height:50px;width:430px;background-color:blue;margin-left:auto;margin-right:auto;"> feed </div>
+</div>
+
+
+<div class="following">
+
+<h1><a href="alluser"><button> All Users</button></a></h1>
+</div>
+
+</body>
+</html>
